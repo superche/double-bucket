@@ -1,0 +1,62 @@
+{
+  "name": "double-bucket",
+  "version": "1.0.0",
+  "description": "A wrapper of double event handler",
+  "main": "dist/index.js",
+  "typings": "src/typings.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/superche/double-bucket.git"
+  },
+  "bugs": {
+    "url": "https://github.com/superche/double-bucket/issues"
+  },
+  "scripts": {
+    "clean": "npx rm -rf dist",
+    "build": "npm run clean && npm run build:ts",
+    "build:ts": "npx tsc --build --pretty",
+    "test": "jest && codecov",
+    "lint": "npx tslint -p ./ --fix",
+    "format": "npm run format:ts && npm run format:test",
+    "format:ts": "npx prettier --write 'src/**/*.ts'",
+    "format:test": "npx prettier --write 'test/**/*.ts'"
+  },
+  "keywords": [],
+  "contributors": [
+    {
+      "name": "Shaw Che",
+      "email": "shawche@outlook.com"
+    }
+  ],
+  "license": "MIT",
+  "huskey": {
+    "hooks": {
+      "pre-commit": "npm run format && npm run lint",
+      "pre-push": "npm test"
+    }
+  },
+  "devDependencies": {
+    "@types/enzyme": "3.9.1",
+    "@types/enzyme-adapter-react-16": "1.0.5",
+    "@types/jest": "24.0.11",
+    "@types/node": "11.13.2",
+    "@types/react": "16.8.13",
+    "@types/react-dom": "16.8.3",
+    "@types/sinon": "7.0.11",
+    "codecov": "3.3.0",
+    "enzyme": "3.9.0",
+    "enzyme-adapter-react-16": "1.12.1",
+    "enzyme-to-json": "3.3.5",
+    "husky": "1.3.1",
+    "jest": "24.7.1",
+    "prettier": "1.16.4",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-test-renderer": "16.8.6",
+    "sinon": "7.3.1",
+    "ts-jest": "24.0.2",
+    "tslint": "5.15.0",
+    "tslint-config-airbnb": "5.11.1",
+    "typescript": "3.4.2"
+  }
+}

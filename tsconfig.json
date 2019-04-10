@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "jsx": "react",
+    "outDir": "./dist",
+    "removeComments": false,
+    "strict": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "baseUrl": ".",
+    "paths": {},
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["./dist", "./test"]
+}
