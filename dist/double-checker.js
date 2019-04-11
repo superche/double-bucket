@@ -35,6 +35,7 @@ var DoubleChecker = /** @class */ (function () {
         this.firstTimeMs = FIRST_TIME_MS_DEFAULT;
         if (this.timeout) {
             clearTimeout(this.timeout);
+            this.timeout = undefined;
         }
     };
     return DoubleChecker;
