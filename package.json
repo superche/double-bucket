@@ -29,7 +29,7 @@
     }
   ],
   "license": "MIT",
-  "huskey": {
+  "husky": {
     "hooks": {
       "pre-commit": "npm run format && npm run lint",
       "pre-push": "npm test"
