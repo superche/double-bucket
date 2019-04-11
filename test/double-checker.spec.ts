@@ -1,5 +1,9 @@
 import { DoubleChecker } from '../src/double-checker';
 
+function wait(ms: number): Promise<any> {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 describe('Test DoubleChecker', () => {
   let checker: DoubleChecker;
 
@@ -10,7 +14,7 @@ describe('Test DoubleChecker', () => {
   it('should emit true at odd time', async () => {
     const firstOutput = checker.emit();
     expect(firstOutput).toEqual(false);
-    await new Promise(resolve => setTimeout(resolve, 50));
+    await wait(50);
     const secondOutput = checker.emit();
     expect(secondOutput).toEqual(true);
   });
@@ -18,7 +22,7 @@ describe('Test DoubleChecker', () => {
   it('should emit false when timeout', async () => {
     const firstOutput = checker.emit();
     expect(firstOutput).toEqual(false);
-    await new Promise(resolve => setTimeout(resolve, 300));
+    await wait(300);
     const secondOutput = checker.emit();
     expect(secondOutput).toEqual(false);
   });
@@ -26,10 +30,10 @@ describe('Test DoubleChecker', () => {
   it('should emit false when thripple time', async () => {
     const firstOutput = checker.emit();
     expect(firstOutput).toEqual(false);
-    await new Promise(resolve => setTimeout(resolve, 50));
+    await wait(50);
     const secondOutput = checker.emit();
     expect(secondOutput).toEqual(true);
-    await new Promise(resolve => setTimeout(resolve, 50));
+    await wait(50);
     const thridOutput = checker.emit();
     expect(thridOutput).toEqual(false);
   });

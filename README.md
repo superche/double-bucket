@@ -15,7 +15,7 @@ npm install --save double-bucket
 React.js example
 
 ```jsx
-import * as DoubleBucket from 'double-bucket';
+import DoubleBucket from 'double-bucket';
 
 export default function DemoComponent() {
   const singleCb = () => console.log('on singleCb');
@@ -23,7 +23,7 @@ export default function DemoComponent() {
   const bucket = new DoubleBucket(singleCb, doubleCb, {
     debounceTimeMs: 300, // optional, default value is 300 ms
   });
-  return `<button onClick={bucket.wrap}>Demo Button</button>`;
+  return (<button onClick={bucket.wrap}>Demo Button</button>);
 }
 ```
 
